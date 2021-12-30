@@ -1,0 +1,173 @@
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.table {
+  display: table;
+}
+
+.inline-table {
+  display: inline-table;
+}
+
+.table-caption {
+  display: table-caption;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.table-column {
+  display: table-column;
+}
+
+.table-column-group {
+  display: table-column-group;
+}
+
+.table-footer-group {
+  display: table-footer-group;
+}
+
+.table-header-group {
+  display: table-header-group;
+}
+
+.table-row-group {
+  display: table-row-group;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.flow-root {
+  display: flow-root;
+}
+
+.grid {
+  display: grid;
+}
+
+.inline-grid {
+  display: -moz-inline-grid;
+  display: -ms-inline-grid;
+}
+
+.contents {
+  display: contents;
+}
+
+.list-item {
+  display: list-item;
+}
+
+.hidden {
+  display: none;
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-block {
+      display: block;
+    }
+
+    .#{$name}-inline-block {
+      display: inline-block;
+    }
+
+    .#{$name}-inline {
+      display: inline;
+    }
+
+    .#{$name}-flex {
+      display: flex;
+    }
+
+    .#{$name}-inline-flex {
+      display: inline-flex;
+    }
+
+    .#{$name}-table {
+      display: table;
+    }
+
+    .#{$name}-inline-table {
+      display: inline-table;
+    }
+
+    .#{$name}-table-caption {
+      display: table-caption;
+    }
+
+    .#{$name}-table-cell {
+      display: table-cell;
+    }
+
+    .#{$name}-table-column {
+      display: table-column;
+    }
+
+    .#{$name}-table-column-group {
+      display: table-column-group;
+    }
+
+    .#{$name}-table-footer-group {
+      display: table-footer-group;
+    }
+
+    .#{$name}-table-header-group {
+      display: table-header-group;
+    }
+
+    .#{$name}-table-row-group {
+      display: table-row-group;
+    }
+
+    .#{$name}-table-row {
+      display: table-row;
+    }
+
+    .#{$name}-flow-root {
+      display: flow-root;
+    }
+
+    .#{$name}-grid {
+      display: grid;
+    }
+
+    .#{$name}-inline-grid {
+      display: -moz-inline-grid;
+      display: -ms-inline-grid;
+    }
+
+    .#{$name}-contents {
+      display: contents;
+    }
+
+    .#{$name}-list-item {
+      display: list-item;
+    }
+
+    .#{$name}-hidden {
+      display: none;
+    }
+  }
+}

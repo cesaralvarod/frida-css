@@ -1,0 +1,47 @@
+.position {
+  &-relative {
+    position: relative;
+  }
+
+  &-absolute {
+    position: absolute;
+  }
+
+  &-fixed {
+    position: fixed;
+  }
+
+  &-static {
+    position: static;
+  }
+
+  &-sticky {
+    position: sticky;
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-position {
+      &-relative {
+        position: relative;
+      }
+
+      &-absolute {
+        position: absolute;
+      }
+
+      &-fixed {
+        position: fixed;
+      }
+
+      &-static {
+        position: static;
+      }
+
+      &-sticky {
+        position: sticky;
+      }
+    }
+  }
+}

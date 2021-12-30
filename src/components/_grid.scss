@@ -1,0 +1,313 @@
+// Grid Columns
+
+@for $size from 1 through $grid-columns {
+  .grid-cols-#{$size} {
+    grid-template-columns: repeat(#{$size}, minmax(0, 1fr));
+  }
+}
+
+.grid-cols-none {
+  grid-template-columns: none;
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    @for $size from 1 through $grid-columns {
+      .#{$name}-grid-cols-#{$size} {
+        grid-template-columns: repeat(#{$size}, minmax(0, 1fr));
+      }
+
+      .#{$name}-grid-cols-none {
+        grid-template-columns: none;
+      }
+    }
+  }
+}
+
+// Grid col auto
+
+.grid-col-auto {
+  grid-column: auto;
+}
+
+// Grid Column start/end
+
+.grid-col-start-auto {
+  grid-column-start: auto;
+}
+
+.grid-col-end-auto {
+  grid-column-end: auto;
+}
+
+.grid-col-span-full {
+  grid-column: 1/-1;
+}
+
+@for $size from 1 through $grid-columns + 1 {
+  @if $size < $grid-columns + 1 {
+    .grid-col-span-#{$size} {
+      grid-column: span #{$size} / span #{$size};
+    }
+  }
+
+  .grid-col-start-#{$size} {
+    grid-column-start: #{$size};
+  }
+
+  .grid-col-end-#{$size} {
+    grid-column-end: #{$size};
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-grid-col-start-auto {
+      grid-column-start: auto;
+    }
+
+    .#{$name}-grid-col-end-auto {
+      grid-column-end: auto;
+    }
+
+    .#{$name}-grid-col-span-full {
+      grid-column: 1/-1;
+    }
+
+    @for $size from 1 through $grid-columns + 1 {
+      @if $size < $grid-columns + 1 {
+        .#{$name}-grid-col-span-#{$size} {
+          grid-column: span #{$size} / span #{$size};
+        }
+      }
+
+      .#{$name}-grid-col-start-#{$size} {
+        grid-column-start: #{$size};
+      }
+
+      .#{$name}-grid-col-end-#{$size} {
+        grid-column-end: #{$size};
+      }
+    }
+  }
+}
+
+// Grid Rows
+
+@for $size from 1 through $grid-rows {
+  .grid-rows-#{$size} {
+    grid-template-rows: repeat(#{$size}, minmax(0, 1fr));
+  }
+}
+
+.grid-rows-none {
+  grid-template-rows: none;
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    @for $size from 1 through $grid-rows {
+      .#{$name}-grid-rows-#{$size} {
+        grid-template-rows: repeat(#{$size}, minmax(0, 1fr));
+      }
+
+      .#{$name}-grid-rows-none {
+        grid-template-rows: none;
+      }
+    }
+  }
+}
+
+// Grid row auto
+
+.grid-row-auto {
+  grid-row: auto;
+}
+
+// Grid Row start/end
+
+.grid-row-start-auto {
+  grid-row-start: auto;
+}
+
+.grid-row-end-auto {
+  grid-column-end: auto;
+}
+
+.grid-row-span-full {
+  grid-column: 1/-1;
+}
+
+@for $size from 1 through $grid-columns + 1 {
+  @if $size < $grid-columns + 1 {
+    .grid-row-span-#{$size} {
+      grid-row: span #{$size} / span #{$size};
+    }
+  }
+
+  .grid-row-start-#{$size} {
+    grid-row-start: #{$size};
+  }
+
+  .grid-row-end-#{$size} {
+    grid-row-end: #{$size};
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-grid-row-start-auto {
+      grid-row-start: auto;
+    }
+
+    .#{$name}-grid-row-end-auto {
+      grid-row-end: auto;
+    }
+
+    .#{$name}-grid-row-span-full {
+      grid-row: 1/-1;
+    }
+
+    @for $size from 1 through $grid-columns + 1 {
+      @if $size < $grid-columns + 1 {
+        .#{$name}-grid-row-span-#{$size} {
+          grid-column: span #{$size} / span #{$size};
+        }
+      }
+
+      .#{$name}-grid-row-start-#{$size} {
+        grid-row-start: #{$size};
+      }
+
+      .#{$name}-grid-row-end-#{$size} {
+        grid-row-end: #{$size};
+      }
+    }
+  }
+}
+
+// Grid auto flow
+
+.grid-flow {
+  &-row {
+    grid-auto-flow: row;
+  }
+
+  &-col {
+    grid-auto-flow: column;
+  }
+
+  &-row-dense {
+    grid-auto-flow: row dense;
+  }
+
+  &-col-dense {
+    grid-auto-flow: column dense;
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-grid-flow {
+      &-row {
+        grid-auto-flow: row;
+      }
+
+      &-col {
+        grid-auto-flow: column;
+      }
+
+      &-row-dense {
+        grid-auto-flow: row dense;
+      }
+
+      &-col-dense {
+        grid-auto-flow: column dense;
+      }
+    }
+  }
+}
+
+// Grid auto columns
+
+.grid-auto-cols {
+  &-auto {
+    grid-auto-columns: auto;
+  }
+
+  &-min {
+    grid-auto-columns: min-content;
+  }
+
+  &-max {
+    grid-auto-columns: max-content;
+  }
+
+  &-fr {
+    grid-auto-columns: minimax(0, 1fr);
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-grid-auto-cols {
+      &-auto {
+        grid-auto-columns: auto;
+      }
+
+      &-min {
+        grid-auto-columns: min-content;
+      }
+
+      &-max {
+        grid-auto-columns: max-content;
+      }
+
+      &-fr {
+        grid-auto-columns: minimax(0, 1fr);
+      }
+    }
+  }
+}
+
+// Grid auto rows
+
+.grid-auto-rows {
+  &-auto {
+    grid-auto-rows: auto;
+  }
+
+  &-min {
+    grid-auto-rows: min-content;
+  }
+
+  &-max {
+    grid-auto-rows: max-content;
+  }
+
+  &-fr {
+    grid-auto-rows: minimax(0, 1fr);
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-grid-auto-cols {
+      &-auto {
+        grid-auto-rows: auto;
+      }
+
+      &-min {
+        grid-auto-rows: min-content;
+      }
+
+      &-max {
+        grid-auto-rows: max-content;
+      }
+
+      &-fr {
+        grid-auto-rows: minimax(0, 1fr);
+      }
+    }
+  }
+}

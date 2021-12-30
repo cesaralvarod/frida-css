@@ -1,0 +1,23 @@
+@function breakpoints() {
+  @return "0";
+}
+
+// Mixin background
+
+@mixin background($name, $hex) {
+  .#{$name} {
+    background: $hex !important;
+  }
+
+  @for $i from 1 through 5 {
+    .#{$name}.lighten-#{$i} {
+      background: lighten($color: $hex, $amount: $i * 6) !important;
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .#{$name}.darken-#{$i} {
+      background: darken($color: $hex, $amount: $i * 6) !important;
+    }
+  }
+}

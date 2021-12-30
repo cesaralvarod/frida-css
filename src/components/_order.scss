@@ -1,0 +1,41 @@
+.order {
+  @for $size from 1 through $grid-columns {
+    &-#{$size} {
+      order: #{$size};
+    }
+  }
+
+  &-first {
+    order: -1;
+  }
+
+  &-last {
+    order: $grid-columns + 1;
+  }
+
+  &-none {
+    order: 0;
+  }
+
+  @each $name, $width in $grid-breakpoints {
+    @media (min-width:#{$width}) {
+      @for $size from 1 through $grid-columns {
+        &-#{$name}-#{$size} {
+          order: #{$size};
+        }
+      }
+
+      &-#{$name}-first {
+        order: -1;
+      }
+
+      &-#{$name}-last {
+        order: $grid-columns + 1;
+      }
+
+      &-#{$name}-none {
+        order: 0;
+      }
+    }
+  }
+}

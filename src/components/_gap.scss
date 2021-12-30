@@ -1,0 +1,47 @@
+.gap {
+  @for $i from 0 through 20 {
+    &-#{$i} {
+      --grid-gutter-width: #{$i}px;
+      --gutter-x: #{$i}px;
+      --gutter-y: #{$i}px;
+      gap: #{$i}px;
+    }
+
+    &-x-#{$i} {
+      --grid-gutter-width: #{$i}px;
+      --gutter-x: #{$i}px;
+      column-gap: #{$i}px;
+    }
+
+    &-y-#{$i} {
+      --gutter-y: #{$i}px;
+      row-gap: #{$i}px;
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-gap {
+      @for $i from 0 through 20 {
+        &-#{$i} {
+          --grid-gutter-width: #{$i}px;
+          --gutter-x: #{$i}px;
+          --gutter-y: #{$i}px;
+          gap: #{$i}px;
+        }
+
+        &-x-#{$i} {
+          --grid-gutter-width: #{$i}px;
+          --gutter-x: #{$i}px;
+          column-gap: #{$i}px;
+        }
+
+        &-y-#{$i} {
+          --gutter-y: #{$i}px;
+          row-gap: #{$i}px;
+        }
+      }
+    }
+  }
+}

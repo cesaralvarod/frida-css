@@ -1,0 +1,102 @@
+// Rows
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+// Cols
+
+.col,
+[class*="col-"] {
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  // width: auto;
+  max-width: 100%;
+}
+
+.col {
+  flex: 1 0 auto;
+}
+
+.col-auto {
+  width: auto;
+  flex-grow: 2;
+}
+
+// Offset
+
+[class*="col-"] {
+  &.offset-auto {
+    margin-left: auto;
+  }
+
+  @for $size from 1 through $grid-columns {
+    &.offset-#{$size} {
+      margin-left: calc((100% * (#{$size} / #{$grid-columns})));
+    }
+  }
+
+  @each $name, $width in $grid-breakpoints {
+    @media (min-width:#{$width}) {
+      &.#{$name}-offset-0 {
+        margin-left: 0;
+      }
+
+      @for $size from 1 through $grid-columns {
+        &.#{$name}-offset-#{$size} {
+          margin-left: calc((100% * (#{$size} / #{$grid-columns})));
+        }
+      }
+    }
+  }
+}
+
+// Cols
+
+@for $size from 1 through $grid-columns {
+  .col-#{$size} {
+    flex: 1 0 auto;
+    @if $size<$grid-columns {
+      width: calc(
+        (100% * (#{$size}/ #{$grid-columns})) -
+          (var(--grid-gutter-width) * 0.75)
+      );
+    }
+    max-width: calc(100% * (#{$size}/ #{$grid-columns}));
+  }
+}
+
+// Cols media queries
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-col-auto {
+      width: auto;
+      flex-grow: 2;
+      max-width: #{$width};
+    }
+
+    @for $size from 1 through $grid-columns {
+      .#{$name}-col-#{$size} {
+        flex: 1 0 auto;
+        @if $size<$grid-columns {
+          width: calc(
+            (100% * (#{$size}/ #{$grid-columns})) -
+              (var(--grid-gutter-width) * 0.75)
+          );
+        }
+        max-width: calc(100% * (#{$size}/ #{$grid-columns}));
+      }
+    }
+  }
+}

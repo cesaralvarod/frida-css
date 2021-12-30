@@ -1,0 +1,82 @@
+$directions: (
+  "l": "left",
+  "r": "right",
+  "t": "top",
+  "b": "bottom",
+);
+
+.m {
+  &-auto {
+    margin: auto;
+  }
+
+  &x-auto {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+
+  &y-auto {
+    margin: {
+      top: auto;
+      bottom: auto;
+    }
+  }
+
+  @each $dirName, $dirValue in $directions {
+    &#{$dirName}-auto {
+      margin-#{$dirValue}: auto;
+    }
+
+    @for $size from 0 through 20 {
+      &#{$dirName}-#{$size} {
+        margin-#{$dirValue}: #{$size}rem;
+      }
+
+      &x-#{$size} {
+        margin: {
+          left: #{$size}rem;
+          right: #{$size}rem;
+        }
+      }
+
+      &y-#{$size} {
+        margin: {
+          top: #{$size}rem;
+          bottom: #{$size}rem;
+        }
+      }
+    }
+  }
+
+  @each $name, $width in $grid-breakpoints {
+    @media (min-width:#{$width}) {
+      @each $dirName, $dirValue in $directions {
+        &#{$dirName}-#{$name}-auto {
+          margin-#{$dirValue}: auto;
+        }
+
+        @for $size from 0 through 10 {
+          &#{$dirName}-#{$name}-#{$size} {
+            margin-#{$dirValue}: #{$size}rem;
+          }
+
+          &x-#{$name}-#{$size} {
+            margin: {
+              left: #{$size}rem;
+              right: #{$size}rem;
+            }
+          }
+
+          &y-#{$name}-#{$size} {
+            margin: {
+              top: #{$size}rem;
+              bottom: #{$size}rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

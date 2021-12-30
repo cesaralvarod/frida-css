@@ -1,0 +1,205 @@
+.w {
+  &-full {
+    width: 100%;
+  }
+
+  &-screen {
+    width: 100vw;
+  }
+
+  &-min {
+    width: min-content;
+  }
+
+  &-max {
+    width: max-content;
+  }
+
+  &-fit {
+    width: fit-content;
+  }
+
+  @for $size from 0 through 180 {
+    &-#{$size*10} {
+      width: #{$size * 10}px;
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-w {
+      &-full {
+        width: 100%;
+      }
+
+      &-screen {
+        width: 100vw;
+      }
+
+      &-min {
+        width: min-content;
+      }
+
+      &-max {
+        width: max-content;
+      }
+
+      &-fit {
+        width: fit-content;
+      }
+
+      @for $size from 0 through 180 {
+        &-#{$size*10} {
+          width: #{$size * 10}px;
+        }
+      }
+    }
+  }
+}
+
+.min-w {
+  &-full {
+    min-width: 100%;
+  }
+
+  &-screen {
+    min-width: 100vw;
+  }
+
+  &-min {
+    min-width: min-content;
+  }
+
+  &-max {
+    min-width: max-content;
+  }
+
+  &-fit {
+    min-width: fit-content;
+  }
+
+  @for $size from 0 through 180 {
+    &-#{$size*10} {
+      min-width: #{$size * 10}px;
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-min-w {
+      &-full {
+        min-width: 100%;
+      }
+
+      &-screen {
+        min-width: 100vw;
+      }
+
+      &-min {
+        min-width: min-content;
+      }
+
+      &-max {
+        min-width: max-content;
+      }
+
+      &-fit {
+        min-width: fit-content;
+      }
+
+      @for $size from 0 through 180 {
+        &-#{$size*10} {
+          min-width: #{$size * 10}px;
+        }
+      }
+    }
+  }
+}
+
+.max-w {
+  &-none {
+    max-width: none;
+  }
+
+  &-full {
+    max-width: 100%;
+  }
+
+  &-prose {
+    max-width: 65ch;
+  }
+
+  &-screen {
+    max-width: 100vw;
+  }
+
+  &-min {
+    max-width: min-content;
+  }
+
+  &-max {
+    max-width: max-content;
+  }
+
+  &-fit {
+    max-width: fit-content;
+  }
+
+  &-screen-xs {
+    max-width: 480px;
+  }
+
+  @each $name, $maxWidth in $container-max-widths {
+    &-screen-#{$name} {
+      max-width: #{$maxWidth};
+    }
+  }
+
+  @for $size from 0 through 180 {
+    &-#{$size*10} {
+      max-width: #{$size * 10}px;
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-max-w {
+      &-none {
+        max-width: none;
+      }
+
+      &-full {
+        max-width: 100%;
+      }
+
+      &-prose {
+        max-width: 65ch;
+      }
+
+      &-screen {
+        max-width: 100vw;
+      }
+
+      &-min {
+        max-width: min-content;
+      }
+
+      &-max {
+        max-width: max-content;
+      }
+
+      &-fit {
+        max-width: fit-content;
+      }
+
+      @for $size from 0 through 180 {
+        &-#{$size*10} {
+          max-width: #{$size * 10}px;
+        }
+      }
+    }
+  }
+}

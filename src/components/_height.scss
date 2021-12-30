@@ -1,0 +1,179 @@
+.h {
+  &-full {
+    height: 100%;
+  }
+
+  &-screen {
+    height: 100vw;
+  }
+
+  &-min {
+    height: min-content;
+  }
+
+  &-max {
+    height: max-content;
+  }
+
+  &-fit {
+    height: fit-content;
+  }
+
+  @for $size from 0 through 120 {
+    &-#{$size*10} {
+      height: #{$size * 10}px;
+    }
+  }
+}
+
+@each $name, $height in $grid-breakpoints {
+  @media (min-height:#{$height}) {
+    .#{$name}-h {
+      &-full {
+        height: 100%;
+      }
+
+      &-screen {
+        height: 100vw;
+      }
+
+      &-min {
+        height: min-content;
+      }
+
+      &-max {
+        height: max-content;
+      }
+
+      &-fit {
+        height: fit-content;
+      }
+
+      @for $size from 0 through 120 {
+        &-#{$size*10} {
+          height: #{$size * 10}px;
+        }
+      }
+    }
+  }
+}
+
+.min-h {
+  &-full {
+    min-height: 100%;
+  }
+
+  &-screen {
+    min-height: 100vh;
+  }
+
+  &-min {
+    min-height: min-content;
+  }
+
+  &-max {
+    min-height: max-content;
+  }
+
+  &-fit {
+    min-height: fit-content;
+  }
+
+  @for $size from 0 through 120 {
+    &-#{$size*10} {
+      min-height: #{$size * 10}px;
+    }
+  }
+}
+
+@each $name, $height in $grid-breakpoints {
+  @media (min-height:#{$height}) {
+    .#{$name}-min-h {
+      &-full {
+        min-height: 100%;
+      }
+
+      &-screen {
+        min-height: 100vh;
+      }
+
+      &-min {
+        min-height: min-content;
+      }
+
+      &-max {
+        min-height: max-content;
+      }
+
+      &-fit {
+        min-height: fit-content;
+      }
+
+      @for $size from 0 through 120 {
+        &-#{$size*10} {
+          min-height: #{$size * 10}px;
+        }
+      }
+    }
+  }
+}
+
+.max-h {
+  &-full {
+    max-height: 100%;
+  }
+
+  &-screen {
+    max-height: 100vh;
+  }
+
+  &-min {
+    max-height: min-content;
+  }
+
+  &-max {
+    max-height: max-content;
+  }
+
+  &-fit {
+    max-height: fit-content;
+  }
+
+  @for $size from 0 through 120 {
+    &-#{$size*10} {
+      max-height: #{$size * 10}px;
+    }
+  }
+}
+
+@each $name, $height in $grid-breakpoints {
+  @media (min-height:#{$height}) {
+    .#{$name}-max-h {
+      &-full {
+        max-height: 100%;
+      }
+
+      &-screen {
+        max-height: 100vh;
+      }
+
+      &-min {
+        max-height: min-content;
+      }
+
+      &-max {
+        max-height: max-content;
+      }
+
+      &-fit {
+        max-height: fit-content;
+      }
+
+      @for $size from 0 through 120 {
+        &-#{$size*10} {
+          max-height: #{$size * 10}px;
+        }
+      }
+    }
+  }
+}

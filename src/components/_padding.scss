@@ -1,0 +1,82 @@
+$directions: (
+  "l": "left",
+  "r": "right",
+  "t": "top",
+  "b": "bottom",
+);
+
+.p {
+  &-auto {
+    padding: auto;
+  }
+
+  &x-auto {
+    padding: {
+      left: auto;
+      right: auto;
+    }
+  }
+
+  &y-auto {
+    padding: {
+      top: auto;
+      bottom: auto;
+    }
+  }
+
+  @each $dirName, $dirValue in $directions {
+    &#{$dirName}-auto {
+      padding-#{$dirValue}: auto;
+    }
+
+    @for $size from 0 through 20 {
+      &#{$dirName}-#{$size} {
+        padding-#{$dirValue}: #{$size}rem;
+      }
+
+      &x-#{$size} {
+        padding: {
+          left: #{$size}rem;
+          right: #{$size}rem;
+        }
+      }
+
+      &y-#{$size} {
+        padding: {
+          top: #{$size}rem;
+          bottom: #{$size}rem;
+        }
+      }
+    }
+  }
+
+  @each $name, $width in $grid-breakpoints {
+    @media (min-width:#{$width}) {
+      @each $dirName, $dirValue in $directions {
+        &#{$dirName}-#{$name}-auto {
+          padding-#{$dirValue}: auto;
+        }
+
+        @for $size from 0 through 10 {
+          &#{$dirName}-#{$name}-#{$size} {
+            padding-#{$dirValue}: #{$size}rem;
+          }
+
+          &x-#{$name}-#{$size} {
+            padding: {
+              left: #{$size}rem;
+              right: #{$size}rem;
+            }
+          }
+
+          &y-#{$name}-#{$size} {
+            padding: {
+              top: #{$size}rem;
+              bottom: #{$size}rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

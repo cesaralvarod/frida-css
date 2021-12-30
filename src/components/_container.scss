@@ -1,0 +1,29 @@
+.container {
+  width: 95%;
+  max-width: 1500px;
+
+  &-xs {
+    width: 95%;
+    max-width: 800px;
+  }
+
+  &-sm {
+    width: 95%;
+    max-width: 1000px;
+  }
+
+  &-md {
+    width: 95%;
+    max-width: 1200px;
+  }
+
+  &-lg {
+    width: 95%;
+    max-width: 1800px;
+  }
+
+  &-xl {
+    width: 95%;
+    max-width: 2000px;
+  }
+}

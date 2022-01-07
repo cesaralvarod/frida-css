@@ -1,5 +1,5 @@
 .gap {
-  @for $i from 0 through 20 {
+  @for $i from 0 through 40 {
     &-#{$i} {
       --grid-gutter-width: #{$i}px;
       --gutter-x: #{$i}px;
@@ -23,7 +23,7 @@
 @each $name, $width in $grid-breakpoints {
   @media (min-width:#{$width}) {
     .#{$name}-gap {
-      @for $i from 0 through 20 {
+      @for $i from 0 through 40 {
         &-#{$i} {
           --grid-gutter-width: #{$i}px;
           --gutter-x: #{$i}px;

@@ -5,6 +5,8 @@ $directions: (
   "b": "bottom",
 );
 
+$to: 50;
+
 .p {
   &-auto {
     padding: auto;
@@ -28,52 +30,76 @@ $directions: (
     &#{$dirName}-auto {
       padding-#{$dirValue}: auto;
     }
+  }
 
-    @for $size from 0 through 20 {
+  @for $size from 0 through $to {
+    &-#{$size} {
+      padding: #{$size}rem;
+    }
+
+    &x-#{$size} {
+      padding-left: #{$size}rem;
+      padding-right: #{$size}rem;
+    }
+
+    &y-#{$size} {
+      padding-top: #{$size}rem;
+      padding-bottom: #{$size}rem;
+    }
+
+    @each $dirName, $dirValue in $directions {
       &#{$dirName}-#{$size} {
         padding-#{$dirValue}: #{$size}rem;
       }
-
-      &x-#{$size} {
-        padding: {
-          left: #{$size}rem;
-          right: #{$size}rem;
-        }
-      }
-
-      &y-#{$size} {
-        padding: {
-          top: #{$size}rem;
-          bottom: #{$size}rem;
-        }
-      }
     }
   }
+}
 
-  @each $name, $width in $grid-breakpoints {
-    @media (min-width:#{$width}) {
+@each $name, $width in $grid-breakpoints {
+  @media (min-width: #{$width}) {
+    .#{$name}-p {
+      &-auto {
+        padding: auto;
+      }
+
+      &x-auto {
+        padding: {
+          left: auto;
+          right: auto;
+        }
+      }
+
+      &y-auto {
+        padding: {
+          top: auto;
+          bottom: auto;
+        }
+      }
+
       @each $dirName, $dirValue in $directions {
-        &#{$dirName}-#{$name}-auto {
+        &#{$dirName}-auto {
           padding-#{$dirValue}: auto;
         }
+      }
 
-        @for $size from 0 through 10 {
-          &#{$dirName}-#{$name}-#{$size} {
+      @for $size from 0 through $to {
+        &-#{$size} {
+          padding: #{$size}rem;
+        }
+
+        &x-#{$size} {
+          padding-left: #{$size}rem;
+          padding-right: #{$size}rem;
+        }
+
+        &y-#{$size} {
+          padding-top: #{$size}rem;
+          padding-bottom: #{$size}rem;
+        }
+
+        @each $dirName, $dirValue in $directions {
+          &#{$dirName}-#{$size} {
             padding-#{$dirValue}: #{$size}rem;
-          }
-
-          &x-#{$name}-#{$size} {
-            padding: {
-              left: #{$size}rem;
-              right: #{$size}rem;
-            }
-          }
-
-          &y-#{$name}-#{$size} {
-            padding: {
-              top: #{$size}rem;
-              bottom: #{$size}rem;
-            }
           }
         }
       }

@@ -5,6 +5,8 @@ $directions: (
   "b": "bottom",
 );
 
+$to: 50;
+
 .m {
   &-auto {
     margin: auto;
@@ -28,52 +30,76 @@ $directions: (
     &#{$dirName}-auto {
       margin-#{$dirValue}: auto;
     }
+  }
 
-    @for $size from 0 through 20 {
+  @for $size from 0 through $to {
+    &-#{$size} {
+      margin: #{$size}rem;
+    }
+
+    &x-#{$size} {
+      margin-left: #{$size}rem;
+      margin-right: #{$size}rem;
+    }
+
+    &y-#{$size} {
+      margin-top: #{$size}rem;
+      margin-bottom: #{$size}rem;
+    }
+
+    @each $dirName, $dirValue in $directions {
       &#{$dirName}-#{$size} {
         margin-#{$dirValue}: #{$size}rem;
       }
-
-      &x-#{$size} {
-        margin: {
-          left: #{$size}rem;
-          right: #{$size}rem;
-        }
-      }
-
-      &y-#{$size} {
-        margin: {
-          top: #{$size}rem;
-          bottom: #{$size}rem;
-        }
-      }
     }
   }
+}
 
-  @each $name, $width in $grid-breakpoints {
-    @media (min-width:#{$width}) {
+@each $name, $width in $grid-breakpoints {
+  @media (min-width: #{$width}) {
+    .#{$name}-m {
+      &-auto {
+        margin: auto;
+      }
+
+      &x-auto {
+        margin: {
+          left: auto;
+          right: auto;
+        }
+      }
+
+      &y-auto {
+        margin: {
+          top: auto;
+          bottom: auto;
+        }
+      }
+
       @each $dirName, $dirValue in $directions {
-        &#{$dirName}-#{$name}-auto {
+        &#{$dirName}-auto {
           margin-#{$dirValue}: auto;
         }
+      }
 
-        @for $size from 0 through 10 {
-          &#{$dirName}-#{$name}-#{$size} {
+      @for $size from 0 through $to {
+        &-#{$size} {
+          margin: #{$size}rem;
+        }
+
+        &x-#{$size} {
+          margin-left: #{$size}rem;
+          margin-right: #{$size}rem;
+        }
+
+        &y-#{$size} {
+          margin-top: #{$size}rem;
+          margin-bottom: #{$size}rem;
+        }
+
+        @each $dirName, $dirValue in $directions {
+          &#{$dirName}-#{$size} {
             margin-#{$dirValue}: #{$size}rem;
-          }
-
-          &x-#{$name}-#{$size} {
-            margin: {
-              left: #{$size}rem;
-              right: #{$size}rem;
-            }
-          }
-
-          &y-#{$name}-#{$size} {
-            margin: {
-              top: #{$size}rem;
-              bottom: #{$size}rem;
-            }
           }
         }
       }

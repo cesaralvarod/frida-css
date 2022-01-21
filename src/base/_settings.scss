@@ -1,14 +1,16 @@
 // Scrollbar
 
-::-webkit-scrollbar {
-  background: transparent;
-  width: 5px;
-  height: 5px;
-}
+.scrollbar-grey {
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 5px;
+    height: 5px;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #8a9096;
-  border-radius: 0.4rem;
+  &::-webkit-scrollbar-thumb {
+    background: #8a9096;
+    border-radius: 0.4rem;
+  }
 }
 
 // Variables

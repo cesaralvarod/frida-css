@@ -5,3 +5,15 @@
 .box-decoration-clone {
   box-decoration-break: clone;
 }
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-box-decoration-slice {
+      box-decoration-break: slice;
+    }
+
+    .#{$name}-box-decoration-clone {
+      box-decoration-break: clone;
+    }
+  }
+}

@@ -5,19 +5,19 @@
 // Mixin background
 
 @mixin background($name, $hex) {
-  .#{$name} {
-    background: $hex !important;
+  .bg-#{$name} {
+    background: $hex;
   }
 
   @for $i from 1 through 5 {
-    .#{$name}.lighten-#{$i} {
-      background: lighten($color: $hex, $amount: $i * 6) !important;
+    .bg-#{$name}.lighten-#{$i} {
+      background: lighten($color: $hex, $amount: $i * 6);
     }
   }
 
   @for $i from 1 through 4 {
-    .#{$name}.darken-#{$i} {
-      background: darken($color: $hex, $amount: $i * 6) !important;
+    .bg-#{$name}.darken-#{$i} {
+      background: darken($color: $hex, $amount: $i * 6);
     }
   }
 }

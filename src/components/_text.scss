@@ -140,6 +140,41 @@ h6.small {
 
 // Font size
 
+$sizes: (
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  14,
+  16,
+  18,
+  20,
+  22,
+  24,
+  26,
+  28,
+  32,
+  36,
+  40,
+  44,
+  48,
+  52,
+  56,
+  60,
+  64,
+  72,
+  80,
+  96
+);
+
 .text {
   &-small {
     font-size: 1.2rem;
@@ -153,51 +188,32 @@ h6.small {
     font-size: 2rem;
   }
 
-  $sizes: (
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    14,
-    16,
-    18,
-    20,
-    24,
-    28,
-    32,
-    36,
-    40,
-    52,
-    56,
-    60,
-    64,
-    72,
-    80,
-    96
-  );
-
   @each $size in $sizes {
     &-#{$size} {
       font-size: #{$size}px;
     }
   }
+}
 
-  @each $name, $width in $grid-breakpoints {
-    // .text-md-12
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-text {
+      &-small {
+        font-size: 1.2rem;
+      }
 
-    @media (min-width:#{$width}) {
-      @each $size in $sizes {
-        &-#{$name}-#{$size} {
-          font-size: #{$size}px;
-        }
+      &-base {
+        font-size: 1.6rem;
+      }
+
+      &-large {
+        font-size: 2rem;
+      }
+    }
+
+    @each $size in $sizes {
+      .#{$name}-text-#{$size} {
+        font-size: #{$size}px;
       }
     }
   }

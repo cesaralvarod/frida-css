@@ -32,6 +32,28 @@ $to: 50;
     }
   }
 
+  @for $size from 1 to 10 {
+    &-#{$size}px {
+      margin: #{$size}px;
+    }
+
+    &x-#{$size}px {
+      margin-left: #{$size}px;
+      margin-right: #{$size}px;
+    }
+
+    &y-#{$size}px {
+      margin-top: #{$size}px;
+      margin-bottom: #{$size}px;
+    }
+
+    @each $dirName, $dirValue in $directions {
+      &#{$dirName}-#{$size}px {
+        margin-#{$dirValue}: #{$size}px;
+      }
+    }
+  }
+
   @for $size from 0 through $to {
     &-#{$size} {
       margin: #{$size}rem;
@@ -79,6 +101,28 @@ $to: 50;
       @each $dirName, $dirValue in $directions {
         &#{$dirName}-auto {
           margin-#{$dirValue}: auto;
+        }
+      }
+
+      @for $size from 1 to 10 {
+        &-#{$size}px {
+          margin: #{$size}px;
+        }
+
+        &x-#{$size}px {
+          margin-left: #{$size}px;
+          margin-right: #{$size}px;
+        }
+
+        &y-#{$size}px {
+          margin-top: #{$size}px;
+          margin-bottom: #{$size}px;
+        }
+
+        @each $dirName, $dirValue in $directions {
+          &#{$dirName}-#{$size}px {
+            margin-#{$dirValue}: #{$size}px;
+          }
         }
       }
 

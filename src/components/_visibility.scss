@@ -5,3 +5,15 @@
 .visibility-visible {
   visibility: visible;
 }
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-visibility-hidden {
+      visibility: hidden;
+    }
+
+    .#{$name}-visibility-visible {
+      visibility: visible;
+    }
+  }
+}

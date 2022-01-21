@@ -1,0 +1,35 @@
+.opacity {
+  @for $i from 1 through 9 {
+    &-#{$i} {
+      opacity: $i * 0.1;
+    }
+  }
+
+  &-hidden {
+    opacity: 0;
+  }
+
+  &-none {
+    opacity: 1;
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-opacity {
+      @for $i from 1 through 9 {
+        &-#{$i} {
+          opacity: $i * 0.1;
+        }
+      }
+
+      &-hidden {
+        opacity: 0;
+      }
+
+      &-none {
+        opacity: 1;
+      }
+    }
+  }
+}

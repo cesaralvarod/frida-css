@@ -1,4 +1,5 @@
 @import "./helpers/variables";
+@import "./helpers/extends";
 @import "./helpers/functions";
 
 @import "./base/colors";
@@ -27,3 +28,6 @@
 @import "./components/width";
 @import "./components/height";
 @import "./components/borders";
+@import "./components/opacity";
+@import "./components/buttons";
+@import "./components/inputs";

@@ -1,0 +1,118 @@
+// Buttons
+
+$btn-color: $white;
+
+$btn-color-lighten: $black;
+
+.btn {
+  @extend %btn;
+  background: $info;
+
+  // Btn colors
+
+  &.btn-info {
+    background: $info;
+    color: $btn-color;
+  }
+
+  &.btn-danger {
+    background: $danger;
+    color: $btn-color;
+  }
+
+  &.btn-success {
+    background: $success;
+    color: $btn-color;
+  }
+
+  &.btn-warning {
+    background: $warning;
+    color: $btn-color;
+  }
+
+  &.btn-primary {
+    background: var(--primary-color);
+    color: $btn-color;
+  }
+
+  &.btn-second {
+    background: var(--second-color);
+    color: $btn-color;
+  }
+
+  &.btn-third {
+    background: var(--third-color);
+    color: $btn-color;
+  }
+
+  &.btn-black {
+    background: $black;
+    color: $btn-color;
+  }
+
+  @each $name, $colorHEX in $colors-list {
+    &.btn-#{$name} {
+      background: #{$colorHEX};
+      color: $btn-color;
+    }
+
+    @for $i from 1 through 5 {
+      &.btn-#{$name}.lighten-#{$i} {
+        background: lighten($color: $colorHEX, $amount: $i * 6);
+
+        @if $i >= 4 {
+          color: $btn-color-lighten;
+        }
+      }
+    }
+
+    @for $i from 1 through 4 {
+      &.btn-#{$name}.darken-#{$i} {
+        background: darken($color: $colorHEX, $amount: $i * 6);
+      }
+    }
+  }
+
+  // Btn sizes
+
+  &.btn-xs {
+    font-size: 1.4rem;
+    padding: 1rem 1.5rem;
+  }
+
+  &.btn-sm {
+    font-size: 1.6rem;
+    padding: 1rem 1.8rem;
+  }
+
+  &.btn-md {
+    font-size: 2.2rem;
+    padding: 1rem 2.4rem;
+  }
+
+  &.btn-lg {
+    font-size: 2.4rem;
+    padding: 1rem 2.8rem;
+  }
+
+  &.btn-xl {
+    font-size: 3.2rem;
+    padding: 1rem 4rem;
+  }
+
+  &.btn-large {
+    padding: 1rem 3rem;
+  }
+
+  // Display
+
+  &.btn-block {
+    display: block;
+    text-align: center;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

@@ -1,15 +1,23 @@
 // Bg color
 
-.primary {
-  background: var(--primary) !important;
+.bg-primary {
+  background: var(--primary-color);
 }
 
-.white {
-  background: $white !important;
+.bg-second {
+  background: var(--second-color);
 }
 
-.black {
-  background: $black !important;
+.bg-third {
+  background: var(--third-color);
+}
+
+.bg-white {
+  background: $white;
+}
+
+.bg-black {
+  background: $black;
 }
 
 @each $name, $colorHEX in $colors-list {
@@ -21,13 +29,28 @@
 .bg-fixed {
   background-attachment: fixed;
 }
-
-.bg-local {
+j .bg-local {
   background-attachment: local;
 }
 
 .bg-scroll {
   background-attachment: scroll;
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-bg-fixed {
+      background-attachment: fixed;
+    }
+
+    .#{$name}-bg-local {
+      background-attachment: local;
+    }
+
+    .#{$name}-bg-scroll {
+      background-attachment: scroll;
+    }
+  }
 }
 
 // Bg Clip
@@ -46,6 +69,26 @@
 
 .bg-clip-text {
   background-clip: text;
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-bg-clip-border {
+      background-clip: border-box;
+    }
+
+    .#{$name}-bg-clip-padding {
+      background-clip: padding-box;
+    }
+
+    .#{$name}-bg-clip-content {
+      background-clip: content-box;
+    }
+
+    .#{$name}-bg-clip-text {
+      background-clip: text;
+    }
+  }
 }
 
 // Bg position
@@ -86,6 +129,46 @@
   background-position: top;
 }
 
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-bg-bottom {
+      background-position: bottom;
+    }
+
+    .#{$name}-bg-center {
+      background-position: center;
+    }
+
+    .#{$name}-bg-left {
+      background-position: left;
+    }
+
+    .#{$name}-bg-left-bottom {
+      background-position: left bottom;
+    }
+
+    .#{$name}-bg-left-top {
+      background-position: left top;
+    }
+
+    .#{$name}-bg-right {
+      background-position: right;
+    }
+
+    .#{$name}-bg-right-bottom {
+      background-position: right bottom;
+    }
+
+    .#{$name}-bg-right-top {
+      background-position: right top;
+    }
+
+    .#{$name}-bg-top {
+      background-position: top;
+    }
+  }
+}
+
 // Bg repeat
 
 .bg-repeat {
@@ -112,6 +195,34 @@
   background-repeat: space;
 }
 
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-bg-repeat {
+      background-repeat: repeat;
+    }
+
+    .#{$name}-bg-no-repeat {
+      background-repeat: no-repeat;
+    }
+
+    .#{$name}-bg-repeat-x {
+      background-repeat: repeat-x;
+    }
+
+    .#{$name}-bg-repeat-y {
+      background-repeat: repeat-y;
+    }
+
+    .#{$name}-bg-repeat-round {
+      background-repeat: round;
+    }
+
+    .#{$name}-bg-repeat-space {
+      background-repeat: space;
+    }
+  }
+}
+
 // Bg Size
 
 .bg-auto {
@@ -124,4 +235,20 @@
 
 .bg-contain {
   background-size: contain;
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-bg-auto {
+      background-size: auto;
+    }
+
+    .#{$name}-bg-cover {
+      background-size: cover;
+    }
+
+    .#{$name}-bg-contain {
+      background-size: contain;
+    }
+  }
 }

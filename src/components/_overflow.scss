@@ -61,3 +61,71 @@
 .overflow-y-scroll {
   overflow-y: scroll;
 }
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name}-overflow-auto {
+      overflow: auto;
+    }
+
+    .#{$name}-overflow-hidden {
+      overflow: hidden;
+    }
+
+    .#{$name}-overflow-clip {
+      overflow: clip;
+    }
+
+    .#{$name}-overflow-visible {
+      overflow: visible;
+    }
+
+    .#{$name}-overflow-x-scroll {
+      overflow-x: scroll;
+    }
+
+    .#{$name}-overflow-x-auto {
+      overflow-x: auto;
+    }
+
+    .#{$name}-overflow-x-hidden {
+      overflow-x: hidden;
+    }
+
+    .#{$name}-overflow-x-clip {
+      overflow-x: clip;
+    }
+
+    .#{$name}-overflow-x-visible {
+      overflow-x: visible;
+    }
+
+    .#{$name}-overflow-x-scroll {
+      overflow-x: scroll;
+    }
+
+    .#{$name}-overflow-y-scroll {
+      overflow-y: scroll;
+    }
+
+    .#{$name}-overflow-y-auto {
+      overflow-y: auto;
+    }
+
+    .#{$name}-overflow-y-hidden {
+      overflow-y: hidden;
+    }
+
+    .#{$name}-overflow-y-clip {
+      overflow-y: clip;
+    }
+
+    .#{$name}-overflow-y-visible {
+      overflow-y: visible;
+    }
+
+    .#{$name}-overflow-y-scroll {
+      overflow-y: scroll;
+    }
+  }
+}

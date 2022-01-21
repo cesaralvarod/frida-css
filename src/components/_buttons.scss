@@ -6,9 +6,12 @@ $btn-color-lighten: $black;
 
 .btn {
   @extend %btn;
-  background: $info;
 
   // Btn colors
+
+  &.btn-transparent {
+    background: transparent;
+  }
 
   &.btn-info {
     background: $info;
@@ -54,14 +57,54 @@ $btn-color-lighten: $black;
     &.btn-#{$name} {
       background: #{$colorHEX};
       color: $btn-color;
+
+      &:hover {
+        background: lighten($color: $colorHEX, $amount: 5);
+      }
+
+      // btn outline
+
+      &.btn-outline {
+        background: transparent;
+        color: $btn-color-lighten;
+        border: 1px solid $colorHEX;
+      }
+
+      &.btn-outline:hover {
+        background: $colorHEX;
+        color: $btn-color;
+      }
     }
 
     @for $i from 1 through 5 {
       &.btn-#{$name}.lighten-#{$i} {
         background: lighten($color: $colorHEX, $amount: $i * 6);
 
+        &:hover {
+          background: lighten($color: $colorHEX, $amount: $i * 6 + 5);
+        }
+
+        &.btn-outline {
+          background: transparent;
+          color: $btn-color-lighten;
+          border: 1px solid lighten($color: $colorHEX, $amount: $i * 6);
+        }
+
+        &.btn-outline:hover {
+          background: lighten($color: $colorHEX, $amount: $i * 6);
+          color: $btn-color;
+        }
+
         @if $i >= 4 {
           color: $btn-color-lighten;
+
+          &:hover {
+            background: lighten($color: $colorHEX, $amount: $i * 6 - 5);
+          }
+
+          &.btn-outline:hover {
+            color: $btn-color-lighten;
+          }
         }
       }
     }
@@ -69,8 +112,28 @@ $btn-color-lighten: $black;
     @for $i from 1 through 4 {
       &.btn-#{$name}.darken-#{$i} {
         background: darken($color: $colorHEX, $amount: $i * 6);
+
+        &:hover {
+          background: darken($color: $colorHEX, $amount: $i * 6 - 5);
+        }
+
+        &.btn-outline {
+          background: transparent;
+          color: $btn-color-lighten;
+          border: 1px solid darken($color: $colorHEX, $amount: $i * 6);
+        }
+
+        &.btn-outline:hover {
+          background: darken($color: $colorHEX, $amount: $i * 6);
+          color: $btn-color;
+        }
       }
     }
+  }
+
+  &.btn-outline {
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
   }
 
   // Btn sizes

@@ -1,0 +1,246 @@
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.outline-white {
+  outline: 2px dotted white;
+  outline-offset: 2px;
+}
+
+.outline-black {
+  outline: 2px dotted black;
+  outline-offset: 2px;
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.outline-dashed {
+  outline-style: dashed;
+}
+
+.outline-dotted {
+  outline-style: dotted;
+}
+
+.outline-double {
+  outline-style: double;
+}
+
+.outline-hidden {
+  outline-style: hidden;
+}
+
+@for $i from 0 through 8 {
+  .outline-#{$i} {
+    outline-width: #{$i}px;
+  }
+}
+
+@each $name, $colorHEX in $colors-list {
+  .outline-#{$name} {
+    outline-color: #{$colorHEX};
+  }
+
+  @for $i from 1 through 5 {
+    .outline-#{$name}.lighten-#{$i} {
+      outline-color: lighten($color: $colorHEX, $amount: $i * 6);
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .outline-#{$name}.darken-#{$i} {
+      outline-color: darken($color: $colorHEX, $amount: $i * 6);
+    }
+  }
+}
+
+@for $i from 0 through 8 {
+  .outline-offset-#{$i} {
+    outline-offset: #{$i}px;
+  }
+}
+
+@each $namePreSelector in $preSelectors {
+  .#{$namePreSelector} {
+    &-outline-none:#{$namePreSelector} {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+
+    &-outline-white:#{$namePreSelector} {
+      outline: 2px dotted white;
+      outline-offset: 2px;
+    }
+
+    &-outline-black:#{$namePreSelector} {
+      outline: 2px dotted black;
+      outline-offset: 2px;
+    }
+
+    @for $i from 0 through 8 {
+      &-outline-#{$i}:#{$namePreSelector} {
+        outline-width: #{$i}px;
+      }
+    }
+
+    &-outline:#{$namePreSelector} {
+      outline-style: solid;
+    }
+
+    &-outline-dashed:#{$namePreSelector} {
+      outline-style: dashed;
+    }
+
+    &-outline-dotted:#{$namePreSelector} {
+      outline-style: dotted;
+    }
+
+    &-outline-double:#{$namePreSelector} {
+      outline-style: double;
+    }
+
+    &-outline-hidden:#{$namePreSelector} {
+      outline-style: hidden;
+    }
+
+    @for $i from 0 through 8 {
+      &-outline-#{$i}:#{$namePreSelector} {
+        outline-width: #{$i}px;
+      }
+    }
+
+    @each $name, $colorHEX in $colors-list {
+      &-outline-#{$name}:#{$namePreSelector} {
+        outline-color: #{$colorHEX};
+      }
+
+      @for $i from 1 through 5 {
+        &-outline-#{$name}.lighten-#{$i}:#{$namePreSelector} {
+          outline-color: lighten($color: $colorHEX, $amount: $i * 6);
+        }
+      }
+
+      @for $i from 1 through 4 {
+        &-outline-#{$name}.darken-#{$i}:#{$namePreSelector} {
+          outline-color: darken($color: $colorHEX, $amount: $i * 6);
+        }
+      }
+    }
+
+    @for $i from 0 through 8 {
+      &-outline-offset-#{$i}:#{$namePreSelector} {
+        outline-offset: #{$i}px;
+      }
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name} {
+      &-outline-none {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+
+      &-outline-white {
+        outline: 2px dotted white;
+        outline-offset: 2px;
+      }
+
+      &-outline-black {
+        outline: 2px dotted black;
+        outline-offset: 2px;
+      }
+
+      @for $i from 0 through 8 {
+        &-outline-#{$i} {
+          outline-width: #{$i}px;
+        }
+      }
+
+      @each $namePreSelector in $preSelectors {
+        &-#{$namePreSelector} {
+          &-outline-none:#{$namePreSelector} {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+          }
+
+          &-outline-white:#{$namePreSelector} {
+            outline: 2px dotted white;
+            outline-offset: 2px;
+          }
+
+          &-outline-black:#{$namePreSelector} {
+            outline: 2px dotted black;
+            outline-offset: 2px;
+          }
+
+          @for $i from 0 through 8 {
+            &-outline-#{$i}:#{$namePreSelector} {
+              outline-width: #{$i}px;
+            }
+          }
+
+          &-outline:#{$namePreSelector} {
+            outline-style: solid;
+          }
+
+          &-outline-dashed:#{$namePreSelector} {
+            outline-style: dashed;
+          }
+
+          &-outline-dotted:#{$namePreSelector} {
+            outline-style: dotted;
+          }
+
+          &-outline-double:#{$namePreSelector} {
+            outline-style: double;
+          }
+
+          &-outline-hidden:#{$namePreSelector} {
+            outline-style: hidden;
+          }
+
+          @for $i from 0 through 8 {
+            &-outline-#{$i}:#{$namePreSelector} {
+              outline-width: #{$i}px;
+            }
+          }
+
+          @each $name, $colorHEX in $colors-list {
+            &-outline-#{$name}:#{$namePreSelector} {
+              outline-color: #{$colorHEX};
+            }
+
+            @for $i from 1 through 5 {
+              &-outline-#{$name}.lighten-#{$i}:#{$namePreSelector} {
+                outline-color: lighten($color: $colorHEX, $amount: $i * 6);
+              }
+            }
+
+            @for $i from 1 through 4 {
+              &-outline-#{$name}.darken-#{$i}:#{$namePreSelector} {
+                outline-color: darken($color: $colorHEX, $amount: $i * 6);
+              }
+            }
+          }
+
+          @for $i from 0 through 8 {
+            &-outline-offset-#{$i}:#{$namePreSelector} {
+              outline-offset: #{$i}px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

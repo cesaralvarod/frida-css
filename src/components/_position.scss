@@ -1,28 +1,26 @@
-.position {
-  &-relative {
-    position: relative;
-  }
+.relative {
+  position: relative;
+}
 
-  &-absolute {
-    position: absolute;
-  }
+.absolute {
+  position: absolute;
+}
 
-  &-fixed {
-    position: fixed;
-  }
+.fixed {
+  position: fixed;
+}
 
-  &-static {
-    position: static;
-  }
+.static {
+  position: static;
+}
 
-  &-sticky {
-    position: sticky;
-  }
+.sticky {
+  position: sticky;
 }
 
 @each $name, $width in $grid-breakpoints {
   @media (min-width:#{$width}) {
-    .#{$name}-position {
+    .#{$name} {
       &-relative {
         position: relative;
       }

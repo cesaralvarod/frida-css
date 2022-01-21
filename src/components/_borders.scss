@@ -128,6 +128,410 @@
   }
 }
 
+@each $namePreSelector in $preSelectors {
+  .#{$namePreSelector} {
+    &-rounded-none:#{$namePreSelector} {
+      border-radius: none;
+    }
+
+    &-rounded {
+      border-radius: 4px;
+
+      &-t:#{$namePreSelector} {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+
+      &-t-full:#{$namePreSelector} {
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+      }
+
+      &-tl:#{$namePreSelector} {
+        border-top-left-radius: 4px;
+      }
+
+      &-tl-full:#{$namePreSelector} {
+        border-top-left-radius: 9999px;
+      }
+
+      &-tr:#{$namePreSelector} {
+        border-top-right-radius: 4px;
+      }
+
+      &-tr-full:#{$namePreSelector} {
+        border-top-right-radius: 9999px;
+      }
+
+      &-l:#{$namePreSelector} {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      &-l-full:#{$namePreSelector} {
+        border-top-left-radius: 9999px;
+        border-bottom-left-radius: 9999px;
+      }
+
+      &-r:#{$namePreSelector} {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+
+      &-r-full:#{$namePreSelector} {
+        border-top-right-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+      }
+
+      &-b:#{$namePreSelector} {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+
+      &-b-full:#{$namePreSelector} {
+        border-bottom-left-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+      }
+
+      &-br:#{$namePreSelector} {
+        border-bottom-right-radius: 4px;
+      }
+
+      &-br-full:#{$namePreSelector} {
+        border-bottom-right-radius: 9999px;
+      }
+
+      &-bl:#{$namePreSelector} {
+        border-bottom-left-radius: 4px;
+      }
+
+      &-bl-full:#{$namePreSelector} {
+        border-bottom-left-radius: 9999px;
+      }
+
+      &-none:#{$namePreSelector} {
+        border-radius: none;
+      }
+
+      &-full:#{$namePreSelector} {
+        border-radius: 9999px;
+      }
+
+      @for $size from 1 through 20 {
+        &-t-#{$size}:#{$namePreSelector} {
+          border-top-left-radius: #{$size}px;
+          border-top-right-radius: #{$size}px;
+        }
+
+        &-tl-#{$size}:#{$namePreSelector} {
+          border-top-left-radius: #{$size}px;
+        }
+
+        &-tr-#{$size}:#{$namePreSelector} {
+          border-top-right-radius: #{$size}px;
+        }
+
+        &-l-#{$size}:#{$namePreSelector} {
+          border-top-left-radius: #{$size}px;
+          border-bottom-left-radius: #{$size}px;
+        }
+
+        &-r-#{$size}:#{$namePreSelector} {
+          border-top-right-radius: #{$size}px;
+          border-bottom-right-radius: #{$size}px;
+        }
+
+        &-b-#{$size}:#{$namePreSelector} {
+          border-bottom-left-radius: #{$size}px;
+          border-bottom-right-radius: #{$size}px;
+        }
+
+        &-br-#{$size}:#{$namePreSelector} {
+          border-bottom-right-radius: #{$size}px;
+        }
+
+        &-bl-#{$size}:#{$namePreSelector} {
+          border-bottom-left-radius: #{$size}px;
+        }
+
+        &-#{$size}:#{$namePreSelector} {
+          border-radius: #{$size}px;
+        }
+      }
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name} {
+      &-rounded-none {
+        border-radius: none;
+      }
+
+      &-rounded {
+        border-radius: 4px;
+
+        &-t {
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+
+        &-t-full {
+          border-top-left-radius: 9999px;
+          border-top-right-radius: 9999px;
+        }
+
+        &-tl {
+          border-top-left-radius: 4px;
+        }
+
+        &-tl-full {
+          border-top-left-radius: 9999px;
+        }
+
+        &-tr {
+          border-top-right-radius: 4px;
+        }
+
+        &-tr-full {
+          border-top-right-radius: 9999px;
+        }
+
+        &-l {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+
+        &-l-full {
+          border-top-left-radius: 9999px;
+          border-bottom-left-radius: 9999px;
+        }
+
+        &-r {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+
+        &-r-full {
+          border-top-right-radius: 9999px;
+          border-bottom-right-radius: 9999px;
+        }
+
+        &-b {
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+
+        &-b-full {
+          border-bottom-left-radius: 9999px;
+          border-bottom-right-radius: 9999px;
+        }
+
+        &-br {
+          border-bottom-right-radius: 4px;
+        }
+
+        &-br-full {
+          border-bottom-right-radius: 9999px;
+        }
+
+        &-bl {
+          border-bottom-left-radius: 4px;
+        }
+
+        &-bl-full {
+          border-bottom-left-radius: 9999px;
+        }
+
+        &-none {
+          border-radius: none;
+        }
+
+        &-full {
+          border-radius: 9999px;
+        }
+
+        @for $size from 1 through 20 {
+          &-t-#{$size} {
+            border-top-left-radius: #{$size}px;
+            border-top-right-radius: #{$size}px;
+          }
+
+          &-tl-#{$size} {
+            border-top-left-radius: #{$size}px;
+          }
+
+          &-tr-#{$size} {
+            border-top-right-radius: #{$size}px;
+          }
+
+          &-l-#{$size} {
+            border-top-left-radius: #{$size}px;
+            border-bottom-left-radius: #{$size}px;
+          }
+
+          &-r-#{$size} {
+            border-top-right-radius: #{$size}px;
+            border-bottom-right-radius: #{$size}px;
+          }
+
+          &-b-#{$size} {
+            border-bottom-left-radius: #{$size}px;
+            border-bottom-right-radius: #{$size}px;
+          }
+
+          &-br-#{$size} {
+            border-bottom-right-radius: #{$size}px;
+          }
+
+          &-bl-#{$size} {
+            border-bottom-left-radius: #{$size}px;
+          }
+
+          &-#{$size} {
+            border-radius: #{$size}px;
+          }
+        }
+      }
+
+      @each $namePreSelector in $preSelectors {
+        &-#{$namePreSelector} {
+          &-rounded-none:#{$namePreSelector} {
+            border-radius: none;
+          }
+
+          &-rounded {
+            border-radius: 4px;
+
+            &-t:#{$namePreSelector} {
+              border-top-left-radius: 4px;
+              border-top-right-radius: 4px;
+            }
+
+            &-t-full:#{$namePreSelector} {
+              border-top-left-radius: 9999px;
+              border-top-right-radius: 9999px;
+            }
+
+            &-tl:#{$namePreSelector} {
+              border-top-left-radius: 4px;
+            }
+
+            &-tl-full:#{$namePreSelector} {
+              border-top-left-radius: 9999px;
+            }
+
+            &-tr:#{$namePreSelector} {
+              border-top-right-radius: 4px;
+            }
+
+            &-tr-full:#{$namePreSelector} {
+              border-top-right-radius: 9999px;
+            }
+
+            &-l:#{$namePreSelector} {
+              border-top-left-radius: 4px;
+              border-bottom-left-radius: 4px;
+            }
+
+            &-l-full:#{$namePreSelector} {
+              border-top-left-radius: 9999px;
+              border-bottom-left-radius: 9999px;
+            }
+
+            &-r:#{$namePreSelector} {
+              border-top-right-radius: 4px;
+              border-bottom-right-radius: 4px;
+            }
+
+            &-r-full:#{$namePreSelector} {
+              border-top-right-radius: 9999px;
+              border-bottom-right-radius: 9999px;
+            }
+
+            &-b:#{$namePreSelector} {
+              border-bottom-left-radius: 4px;
+              border-bottom-right-radius: 4px;
+            }
+
+            &-b-full:#{$namePreSelector} {
+              border-bottom-left-radius: 9999px;
+              border-bottom-right-radius: 9999px;
+            }
+
+            &-br:#{$namePreSelector} {
+              border-bottom-right-radius: 4px;
+            }
+
+            &-br-full:#{$namePreSelector} {
+              border-bottom-right-radius: 9999px;
+            }
+
+            &-bl:#{$namePreSelector} {
+              border-bottom-left-radius: 4px;
+            }
+
+            &-bl-full:#{$namePreSelector} {
+              border-bottom-left-radius: 9999px;
+            }
+
+            &-none:#{$namePreSelector} {
+              border-radius: none;
+            }
+
+            &-full:#{$namePreSelector} {
+              border-radius: 9999px;
+            }
+
+            @for $size from 1 through 20 {
+              &-t-#{$size}:#{$namePreSelector} {
+                border-top-left-radius: #{$size}px;
+                border-top-right-radius: #{$size}px;
+              }
+
+              &-tl-#{$size}:#{$namePreSelector} {
+                border-top-left-radius: #{$size}px;
+              }
+
+              &-tr-#{$size}:#{$namePreSelector} {
+                border-top-right-radius: #{$size}px;
+              }
+
+              &-l-#{$size}:#{$namePreSelector} {
+                border-top-left-radius: #{$size}px;
+                border-bottom-left-radius: #{$size}px;
+              }
+
+              &-r-#{$size}:#{$namePreSelector} {
+                border-top-right-radius: #{$size}px;
+                border-bottom-right-radius: #{$size}px;
+              }
+
+              &-b-#{$size}:#{$namePreSelector} {
+                border-bottom-left-radius: #{$size}px;
+                border-bottom-right-radius: #{$size}px;
+              }
+
+              &-br-#{$size}:#{$namePreSelector} {
+                border-bottom-right-radius: #{$size}px;
+              }
+
+              &-bl-#{$size}:#{$namePreSelector} {
+                border-bottom-left-radius: #{$size}px;
+              }
+
+              &-#{$size}:#{$namePreSelector} {
+                border-radius: #{$size}px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // Border width
 
 $directions: (
@@ -167,7 +571,143 @@ $directions: (
   }
 }
 
+@each $namePreSelector in $preSelectors {
+  .#{$namePreSelector} {
+    &-border {
+      @each $name, $dir in $directions {
+        &-#{$name}:#{$namePreSelector} {
+          border-#{$dir}-width: 1px;
+        }
+      }
+
+      @for $i from 0 through 20 {
+        &-#{$i}:#{$namePreSelector} {
+          border-width: #{$i}px;
+        }
+
+        &-x-#{$i}:#{$namePreSelector} {
+          border-left-width: #{i}px;
+          border-right-width: #{i}px;
+        }
+
+        &-y-#{$i}:#{$namePreSelector} {
+          border-top-width: #{i}px;
+          border-bottom-width: #{i}px;
+        }
+
+        @each $name, $dir in $directions {
+          &-#{$name}-#{$i}:#{$namePreSelector} {
+            border-#{$dir}-width: #{$i}px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name} {
+      &-border {
+        @each $name, $dir in $directions {
+          &-#{$name} {
+            border-#{$dir}-width: 1px;
+          }
+        }
+
+        @for $i from 0 through 20 {
+          &-#{$i} {
+            border-width: #{$i}px;
+          }
+
+          &-x-#{$i} {
+            border-left-width: #{i}px;
+            border-right-width: #{i}px;
+          }
+
+          &-y-#{$i} {
+            border-top-width: #{i}px;
+            border-bottom-width: #{i}px;
+          }
+
+          @each $name, $dir in $directions {
+            &-#{$name}-#{$i} {
+              border-#{$dir}-width: #{$i}px;
+            }
+          }
+        }
+      }
+
+      @each $namePreSelector in $preSelectors {
+        &-#{$namePreSelector} {
+          &-border {
+            @each $name, $dir in $directions {
+              &-#{$name}:#{$namePreSelector} {
+                border-#{$dir}-width: 1px;
+              }
+            }
+
+            @for $i from 0 through 20 {
+              &-#{$i}:#{$namePreSelector} {
+                border-width: #{$i}px;
+              }
+
+              &-x-#{$i}:#{$namePreSelector} {
+                border-left-width: #{i}px;
+                border-right-width: #{i}px;
+              }
+
+              &-y-#{$i}:#{$namePreSelector} {
+                border-top-width: #{i}px;
+                border-bottom-width: #{i}px;
+              }
+
+              @each $name, $dir in $directions {
+                &-#{$name}-#{$i}:#{$namePreSelector} {
+                  border-#{$dir}-width: #{$i}px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // Border color
+
+.border-inherit {
+  border-color: inherit;
+}
+
+.border-current {
+  border-color: currentColor;
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.border-primary {
+  border-color: var(--primary-color);
+}
+
+.border-second {
+  border-color: var(--second-color);
+}
+
+.border-third {
+  border-color: var(--third-color);
+}
+
+.border-white {
+  border-color: $white;
+}
+
+.border-black {
+  border-color: $black;
+}
 
 @each $name, $hex in $colors-list {
   .border {
@@ -184,6 +724,150 @@ $directions: (
     @for $i from 1 through 4 {
       &-#{$name}.darken-#{$i} {
         border-color: darken($color: $hex, $amount: $i * 6) !important;
+      }
+    }
+  }
+}
+
+@each $namePreSelector in $preSelectors {
+  .#{$namePreSelector} {
+    &-border-inherit:#{$namePreSelector} {
+      border-color: inherit;
+    }
+
+    &-border-current:#{$namePreSelector} {
+      border-color: currentColor;
+    }
+
+    &-border-transparent:#{$namePreSelector} {
+      border-color: transparent;
+    }
+
+    &-border-primary:#{$namePreSelector} {
+      border-color: var(--primary-color);
+    }
+
+    &-border-second:#{$namePreSelector} {
+      border-color: var(--second-color);
+    }
+
+    &-border-third:#{$namePreSelector} {
+      border-color: var(--third-color);
+    }
+
+    &-border-white:#{$namePreSelector} {
+      border-color: $white;
+    }
+
+    &-border-black:#{$namePreSelector} {
+      border-color: $black;
+    }
+
+    @each $name, $hex in $colors-list {
+      &-border {
+        &-#{$name}:#{$namePreSelector} {
+          border-color: $hex;
+        }
+
+        @for $i from 1 through 5 {
+          &-#{$name}.lighten-#{$i}:#{$namePreSelector} {
+            border-color: lighten($color: $hex, $amount: $i * 6) !important;
+          }
+        }
+
+        @for $i from 1 through 4 {
+          &-#{$name}.darken-#{$i}:#{$namePreSelector} {
+            border-color: darken($color: $hex, $amount: $i * 6) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name} {
+      @each $name, $hex in $colors-list {
+        &-border {
+          &-#{$name} {
+            border-color: $hex;
+          }
+
+          @for $i from 1 through 5 {
+            &-#{$name}.lighten-#{$i} {
+              border-color: lighten($color: $hex, $amount: $i * 6) !important;
+            }
+          }
+
+          @for $i from 1 through 4 {
+            &-#{$name}.darken-#{$i} {
+              border-color: darken($color: $hex, $amount: $i * 6) !important;
+            }
+          }
+        }
+      }
+
+      @each $namePreSelector in $preSelectors {
+        &-#{$namePreSelector} {
+          &-border-inherit:#{$namePreSelector} {
+            border-color: inherit;
+          }
+
+          &-border-current:#{$namePreSelector} {
+            border-color: currentColor;
+          }
+
+          &-border-transparent:#{$namePreSelector} {
+            border-color: transparent;
+          }
+
+          &-border-primary:#{$namePreSelector} {
+            border-color: var(--primary-color);
+          }
+
+          &-border-second:#{$namePreSelector} {
+            border-color: var(--second-color);
+          }
+
+          &-border-third:#{$namePreSelector} {
+            border-color: var(--third-color);
+          }
+
+          &-border-white:#{$namePreSelector} {
+            border-color: $white;
+          }
+
+          &-border-black:#{$namePreSelector} {
+            border-color: $black;
+          }
+
+          @each $name, $hex in $colors-list {
+            &-border {
+              &-#{$name}:#{$namePreSelector} {
+                border-color: $hex;
+              }
+
+              @for $i from 1 through 5 {
+                &-#{$name}.lighten-#{$i}:#{$namePreSelector} {
+                  border-color: lighten(
+                    $color: $hex,
+                    $amount: $i * 6
+                  ) !important;
+                }
+              }
+
+              @for $i from 1 through 4 {
+                &-#{$name}.darken-#{$i}:#{$namePreSelector} {
+                  border-color: darken(
+                    $color: $hex,
+                    $amount: $i * 6
+                  ) !important;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -208,4 +892,75 @@ $directions: (
 }
 .border-none {
   border-style: none;
+}
+
+@each $namePreSelector in $preSelectors {
+  .#{$namePreSelector} {
+    &-border-solid:#{$namePreSelector} {
+      border-style: solid;
+    }
+    &-border-dashed:#{$namePreSelector} {
+      border-style: dashed;
+    }
+    &-border-dotted:#{$namePreSelector} {
+      border-style: dotted;
+    }
+    &-border-double:#{$namePreSelector} {
+      border-style: double;
+    }
+    &-border-hidden:#{$namePreSelector} {
+      border-style: hidden;
+    }
+    &-border-none:#{$namePreSelector} {
+      border-style: none;
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name} {
+      &-border-solid {
+        border-style: solid;
+      }
+      &-border-dashed {
+        border-style: dashed;
+      }
+      &-border-dotted {
+        border-style: dotted;
+      }
+      &-border-double {
+        border-style: double;
+      }
+      &-border-hidden {
+        border-style: hidden;
+      }
+      &-border-none {
+        border-style: none;
+      }
+
+      @each $namePreSelector in $preSelectors {
+        &-#{$namePreSelector} {
+          &-border-solid:#{$namePreSelector} {
+            border-style: solid;
+          }
+          &-border-dashed:#{$namePreSelector} {
+            border-style: dashed;
+          }
+          &-border-dotted:#{$namePreSelector} {
+            border-style: dotted;
+          }
+          &-border-double:#{$namePreSelector} {
+            border-style: double;
+          }
+          &-border-hidden:#{$namePreSelector} {
+            border-style: hidden;
+          }
+          &-border-none:#{$namePreSelector} {
+            border-style: none;
+          }
+        }
+      }
+    }
+  }
 }

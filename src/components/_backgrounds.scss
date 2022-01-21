@@ -1,5 +1,17 @@
 // Bg color
 
+.bg-inherit {
+  background: inherit;
+}
+
+.bg-current {
+  background: currentColor;
+}
+
+.bg-transparent {
+  background: transparent;
+}
+
 .bg-primary {
   background: var(--primary-color);
 }
@@ -21,7 +33,63 @@
 }
 
 @each $name, $colorHEX in $colors-list {
-  @include background($name, $colorHEX);
+  .bg-#{$name} {
+    background: $colorHEX;
+  }
+
+  @for $i from 1 through 5 {
+    .bg-#{$name}.lighten-#{$i} {
+      background: lighten($color: $colorHEX, $amount: $i * 6);
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .bg-#{$name}.darken-#{$i} {
+      background: darken($color: $colorHEX, $amount: $i * 6);
+    }
+  }
+}
+
+@each $namePreSelector in $preSelectors {
+  .#{$namePreSelector} {
+    &-bg-primary:#{$namePreSelector} {
+      background: var(--primary-color);
+    }
+
+    &-bg-second:#{$namePreSelector} {
+      background: var(--second-color);
+    }
+
+    &-bg-third:#{$namePreSelector} {
+      background: var(--third-color);
+    }
+
+    &-bg-white:#{$namePreSelector} {
+      background: $white;
+    }
+
+    &-bg-black:#{$namePreSelector} {
+      background: $black;
+    }
+
+    @each $name, $colorHEX in $colors-list {
+      &-bg-#{$name}:#{$namePreSelector} {
+        background: $colorHEX;
+      }
+
+      @for $i from 1 through 5 {
+        &-bg-#{$name}.lighten-#{$i}:#{$namePreSelector} {
+          background: lighten($color: $colorHEX, $amount: $i * 6);
+        }
+      }
+
+      @for $i from 1 through 4 {
+        &-bg-#{$name}.darken-#{$i}:#{$namePreSelector} {
+          background: darken($color: $colorHEX, $amount: $i * 6);
+        }
+      }
+    }
+  }
 }
 
 // Bg attachment
@@ -29,7 +97,8 @@
 .bg-fixed {
   background-attachment: fixed;
 }
-j .bg-local {
+
+.bg-local {
   background-attachment: local;
 }
 

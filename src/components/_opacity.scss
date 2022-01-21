@@ -1,34 +1,80 @@
 .opacity {
-  @for $i from 1 through 9 {
-    &-#{$i} {
-      opacity: $i * 0.1;
+  @for $i from 0 through 20 {
+    &-#{$i * 5} {
+      opacity: $i * 0.05;
     }
   }
+}
 
-  &-hidden {
-    opacity: 0;
+.hover {
+  &-opacity {
+    @for $i from 0 through 20 {
+      &-#{$i * 5}:hover {
+        opacity: $i * 0.05;
+      }
+    }
   }
+}
 
-  &-none {
-    opacity: 1;
+.focus {
+  &-opacity {
+    @for $i from 0 through 20 {
+      &-#{$i * 5}:focus {
+        opacity: $i * 0.05;
+      }
+    }
+  }
+}
+
+.active {
+  &-opacity {
+    @for $i from 0 through 20 {
+      &-#{$i * 5}:active {
+        opacity: $i * 0.05;
+      }
+    }
   }
 }
 
 @each $name, $width in $grid-breakpoints {
   @media (min-width:#{$width}) {
-    .#{$name}-opacity {
-      @for $i from 1 through 9 {
-        &-#{$i} {
-          opacity: $i * 0.1;
+    .#{$name} {
+      &-opacity {
+        @for $i from 0 through 20 {
+          &-#{$i * 5} {
+            opacity: $i * 0.05;
+          }
         }
       }
 
-      &-hidden {
-        opacity: 0;
+      &-hover {
+        &-opacity {
+          @for $i from 0 through 20 {
+            &-#{$i * 5}:hover {
+              opacity: $i * 0.05;
+            }
+          }
+        }
       }
 
-      &-none {
-        opacity: 1;
+      &-focus {
+        &-opacity {
+          @for $i from 0 through 20 {
+            &-#{$i * 5}:focus {
+              opacity: $i * 0.05;
+            }
+          }
+        }
+      }
+
+      &-active {
+        &-opacity {
+          @for $i from 0 through 20 {
+            &-#{$i * 5}:active {
+              opacity: $i * 0.05;
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,369 @@
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.shadow-inner {
+  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
+
+.shadow-none {
+  box-shadow: 0 0 #0000;
+}
+
+@each $namePreSelector in $preSelectors {
+  .#{$namePreSelector} {
+    &-shadow-sm:#{$namePreSelector} {
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    }
+
+    &-shadow:#{$namePreSelector} {
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+
+    &-shadow-md:#{$namePreSelector} {
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    &-shadow-lg:#{$namePreSelector} {
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    &-shadow-xl:#{$namePreSelector} {
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    &-shadow-2xl:#{$namePreSelector} {
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    }
+
+    &-shadow-inner:#{$namePreSelector} {
+      box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+    }
+
+    &-shadow-none:#{$namePreSelector} {
+      box-shadow: 0 0 #0000;
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name} {
+      &-shadow-sm {
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      }
+
+      &-shadow {
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+          0 1px 2px -1px rgb(0 0 0 / 0.1);
+      }
+
+      &-shadow-md {
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+
+      &-shadow-lg {
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+
+      &-shadow-xl {
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+
+      &-shadow-2xl {
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      }
+
+      &-shadow-inner {
+        box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+      }
+
+      &-shadow-none {
+        box-shadow: 0 0 #0000;
+      }
+
+      @each $namePreSelector in $preSelectors {
+        &-#{$namePreSelector} {
+          &-shadow-sm:#{$namePreSelector} {
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+          }
+
+          &-shadow:#{$namePreSelector} {
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+              0 1px 2px -1px rgb(0 0 0 / 0.1);
+          }
+
+          &-shadow-md:#{$namePreSelector} {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+              0 2px 4px -2px rgb(0 0 0 / 0.1);
+          }
+
+          &-shadow-lg:#{$namePreSelector} {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+              0 4px 6px -4px rgb(0 0 0 / 0.1);
+          }
+
+          &-shadow-xl:#{$namePreSelector} {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+              0 8px 10px -6px rgb(0 0 0 / 0.1);
+          }
+
+          &-shadow-2xl:#{$namePreSelector} {
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+          }
+
+          &-shadow-inner:#{$namePreSelector} {
+            box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+          }
+
+          &-shadow-none:#{$namePreSelector} {
+            box-shadow: 0 0 #0000;
+          }
+        }
+      }
+    }
+  }
+}
+
+// color
+
+.shadow-inherit {
+  --tw-shadow-color: inherit;
+}
+
+.shadow-current {
+  --tw-shadow-color: currentColor;
+}
+
+.shadow-transparent {
+  --tw-shadow-color: transparent;
+}
+
+.shadow-primary {
+  --tw-shadow-color: var(--primary-color);
+}
+
+.shadow-second {
+  --tw-shadow-color: var(--second-color);
+}
+
+.shadow-third {
+  --tw-shadow-color: var(--third-color);
+}
+
+.shadow-white {
+  --tw-shadow-color: $white;
+}
+
+.shadow-black {
+  --tw-shadow-color: $black;
+}
+
+@each $name, $colorHEX in $colors-list {
+  .shadow-#{$name} {
+    --tw-shadow-color: $colorHEX;
+  }
+
+  @for $i from 1 through 5 {
+    .shadow-#{$name}.lighten-#{$i} {
+      --tw-shadow-color: lighten($color: $colorHEX, $amount: $i * 6);
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .shadow-#{$name}.darken-#{$i} {
+      --tw-shadow-color: darken($color: $colorHEX, $amount: $i * 6);
+    }
+  }
+}
+
+@each $namePreSelector in $preSelectors {
+  .#{$namePreSelector} {
+    &-shadow-inherit:#{$namePreSelector} {
+      --tw-shadow-color: inherit;
+    }
+
+    &-shadow-current:#{$namePreSelector} {
+      --tw-shadow-color: currentColor;
+    }
+
+    &-shadow-transparent:#{$namePreSelector} {
+      --tw-shadow-color: transparent;
+    }
+
+    &-shadow-primary:#{$namePreSelector} {
+      --tw-shadow-color: var(--primary-color);
+    }
+
+    &-shadow-second:#{$namePreSelector} {
+      --tw-shadow-color: var(--second-color);
+    }
+
+    &-shadow-third:#{$namePreSelector} {
+      --tw-shadow-color: var(--third-color);
+    }
+
+    &-shadow-white:#{$namePreSelector} {
+      --tw-shadow-color: $white;
+    }
+
+    &-shadow-black:#{$namePreSelector} {
+      --tw-shadow-color: $black;
+    }
+
+    @each $name, $colorHEX in $colors-list {
+      &-shadow-#{$name}:#{$namePreSelector} {
+        --tw-shadow-color: $colorHEX;
+      }
+
+      @for $i from 1 through 5 {
+        &-shadow-#{$name}.lighten-#{$i}:#{$namePreSelector} {
+          --tw-shadow-color: lighten($color: $colorHEX, $amount: $i * 6);
+        }
+      }
+
+      @for $i from 1 through 4 {
+        &-shadow-#{$name}.darken-#{$i}:#{$namePreSelector} {
+          --tw-shadow-color: darken($color: $colorHEX, $amount: $i * 6);
+        }
+      }
+    }
+  }
+}
+
+@each $name, $width in $grid-breakpoints {
+  @media (min-width:#{$width}) {
+    .#{$name} {
+      &-shadow-inherit {
+        --tw-shadow-color: inherit;
+      }
+
+      &-shadow-current {
+        --tw-shadow-color: currentColor;
+      }
+
+      &-shadow-transparent {
+        --tw-shadow-color: transparent;
+      }
+
+      &-shadow-primary {
+        --tw-shadow-color: var(--primary-color);
+      }
+
+      &-shadow-second {
+        --tw-shadow-color: var(--second-color);
+      }
+
+      &-shadow-third {
+        --tw-shadow-color: var(--third-color);
+      }
+
+      &-shadow-white {
+        --tw-shadow-color: $white;
+      }
+
+      &-shadow-black {
+        --tw-shadow-color: $black;
+      }
+
+      @each $name, $colorHEX in $colors-list {
+        &-shadow-#{$name} {
+          --tw-shadow-color: $colorHEX;
+        }
+
+        @for $i from 1 through 5 {
+          &-shadow-#{$name}.lighten-#{$i} {
+            --tw-shadow-color: lighten($color: $colorHEX, $amount: $i * 6);
+          }
+        }
+
+        @for $i from 1 through 4 {
+          &-shadow-#{$name}.darken-#{$i} {
+            --tw-shadow-color: darken($color: $colorHEX, $amount: $i * 6);
+          }
+        }
+      }
+
+      @each $namePreSelector in $preSelectors {
+        &-#{$namePreSelector} {
+          &-shadow-inherit:#{$namePreSelector} {
+            --tw-shadow-color: inherit;
+          }
+
+          &-shadow-current:#{$namePreSelector} {
+            --tw-shadow-color: currentColor;
+          }
+
+          &-shadow-transparent:#{$namePreSelector} {
+            --tw-shadow-color: transparent;
+          }
+
+          &-shadow-primary:#{$namePreSelector} {
+            --tw-shadow-color: var(--primary-color);
+          }
+
+          &-shadow-second:#{$namePreSelector} {
+            --tw-shadow-color: var(--second-color);
+          }
+
+          &-shadow-third:#{$namePreSelector} {
+            --tw-shadow-color: var(--third-color);
+          }
+
+          &-shadow-white:#{$namePreSelector} {
+            --tw-shadow-color: $white;
+          }
+
+          &-shadow-black:#{$namePreSelector} {
+            --tw-shadow-color: $black;
+          }
+
+          @each $name, $colorHEX in $colors-list {
+            &-shadow-#{$name}:#{$namePreSelector} {
+              --tw-shadow-color: $colorHEX;
+            }
+
+            @for $i from 1 through 5 {
+              &-shadow-#{$name}.lighten-#{$i}:#{$namePreSelector} {
+                --tw-shadow-color: lighten($color: $colorHEX, $amount: $i * 6);
+              }
+            }
+
+            @for $i from 1 through 4 {
+              &-shadow-#{$name}.darken-#{$i}:#{$namePreSelector} {
+                --tw-shadow-color: darken($color: $colorHEX, $amount: $i * 6);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
